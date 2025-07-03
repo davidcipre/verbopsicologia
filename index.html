@@ -1,13 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mi primera página web gratis con GitHub Pages">
-  <title>Mi Sitio Web</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Consulta de Psicología - Atención profesional y cercana." />
+  <title>Consulta de Psicología</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: #5a8dee;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .contacto {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #5a8dee;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e4eaf2;
+      margin-top: 3rem;
+    }
+
+    .redes a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #5a8dee;
+    }
+
+    @media (max-width: 600px) {
+      section, .contacto {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Hola mundo!</h1>
-  <p>Bienvenido a mi sitio web gratuito en GitHub Pages.</p>
+
+  <header>
+    <h1>Consulta de Psicología</h1>
+    <p>Atención profesional y cercana para tu bienestar emocional</p>
+  </header>
+
+  <section>
+    <h2>Presentación</h2>
+    <p>
+      Soy psicóloga con experiencia en ansiedad, autoestima, duelo y crecimiento personal. Te ofrezco un espacio seguro donde puedas expresarte libremente y avanzar a tu ritmo.
+    </p>
+
+    <div class="contacto">
+      <h2>Contacto</h2>
+      <p>📞 Teléfono: <strong>+34 600 000 000</strong></p>
+      <p>📧 Email: <strong>psicologa@ejemplo.com</strong></p>
+
+      <form action="mailto:psicologa@ejemplo.com" method="POST" enctype="text/plain">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required />
+        
+        <label>Correo electrónico:</label>
+        <input type="email" name="email" required />
+
+        <label>Mensaje:</label>
+        <textarea name="mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+    <div class="redes" style="margin-top: 2rem;">
+      <h3>Redes Sociales</h3>
+      <a href="https://wa.me/34600000000" target="_blank">WhatsApp</a> |
+      <a href="https://instagram.com/tuusuario" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/tuusuario" target="_blank">Facebook</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Consulta de Psicología · Todos los derechos reservados
+  </footer>
+
 </body>
 </html>
+
