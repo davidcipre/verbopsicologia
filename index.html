@@ -278,7 +278,8 @@
 			</div>
 
 			<div id="mensajeEnviado" style="
-			  display: none;
+			  display: block;           /* Lo mostramos inicialmente (JS ocultará si no corresponde) */
+			  opacity: 0;               /* Invisible inicialmente */
 			  position: fixed;
 			  top: 50%;
 			  left: 50%;
@@ -291,9 +292,12 @@
 			  z-index: 9999;
 			  font-size: 1.2em;
 			  text-align: center;
+			  transition: opacity 0.8s ease;
+			  pointer-events: none;     /* Para que no interfiera mientras invisible */
 			">
-			  ¡Mensaje enviado!
+			  ¡Mensaje enviado! :)
 			</div>
+
 
 
 		<!-- Scripts -->
@@ -309,16 +313,25 @@
 			    if (window.location.hash === "#enviado") {
 			      const mensaje = document.getElementById("mensajeEnviado");
 			      if (mensaje) {
-			        mensaje.style.display = "block";
+			        // Mostrar mensaje con fade in
+			        mensaje.style.opacity = "1";
+			        mensaje.style.pointerEvents = "auto";  // Activar interacción (por si acaso)
+			
+			        // Después de 4 segundos, hacer fade out
 			        setTimeout(() => {
-			          mensaje.style.display = "none";
-			          // Limpiar el hash de la URL sin recargar
-			          history.replaceState(null, null, window.location.pathname);
-			        }, 4000); // Oculta el mensaje tras 4 segundos
+			          mensaje.style.opacity = "0";
+			
+			          // Esperar a que termine la transición para ocultar display y limpiar URL
+			          mensaje.addEventListener("transitionend", () => {
+			            mensaje.style.display = "none";
+			            history.replaceState(null, null, window.location.pathname);
+			          }, { once: true });
+			        }, 4000);
 			      }
 			    }
 			  });
 			</script>
+
 
 
 	</body>
