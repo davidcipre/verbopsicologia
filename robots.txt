@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davidcipre.github.io/verbopsicologia/sitemap.xml
